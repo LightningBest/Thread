@@ -64,7 +64,7 @@ int main(void)
     std::thread outObj(&receive::readQueue,&obj);
     std::thread inObj(&receive::wirteQueue, &obj);
 
-    outObj.join();
+    outObj.join(); //join阻塞等待线程退出
     inObj.join();
 
     cout << "主线程开始执行" << endl;
