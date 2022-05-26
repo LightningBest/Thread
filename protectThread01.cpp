@@ -1,4 +1,4 @@
-﻿#include <iostream>  //主分支修改文件
+#include <iostream>
 #include <thread>
 #include <list>
 #include <windows.h>
@@ -64,7 +64,8 @@ int main(void)
     std::thread outObj(&receive::readQueue,&obj);
     std::thread inObj(&receive::wirteQueue, &obj);
 
-    outObj.join(); //阻塞等待线程退出
+    outObj.join(); 
+    outObj.join(); //join阻塞等待线程退出
     inObj.join();
 
     cout << "主线程开始执行" << endl;
